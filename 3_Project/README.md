@@ -40,7 +40,7 @@ plt.show()
 
 ### Results
 
-[Visualization of Top Skills for Data Nerda](Skill_Demand.png)
+[Visualization of Top Skills for Data Nerda](Images\Skill_Demand.png)
 
 
 ### Insights
