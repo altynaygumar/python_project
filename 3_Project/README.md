@@ -76,32 +76,12 @@ View my notebook with detailed steps here
 ### Visualize Data
 
 ```python
-fig, ax = plt.subplots(len(job_titles),1)
-
-sns.set_theme(style='ticks')
+fig, ax = plt.subplots(len(job_titles), 1)
 
 for i, job_title in enumerate(job_titles):
-    df_plot = df_skills_perc[df_skills_perc['job_title_short']==job_title].head(5)
-    sns.barplot(data = df_plot, 
-                x = 'skill_percent', 
-                y = 'job_skills', 
-                ax = ax[i], 
-                hue = 'skill_count', 
-                palette = 'dark:b_r')
-    ax[i].set_title(job_title)
-    ax[i].set_ylabel('')
-    ax[i].set_xlabel('')
-    ax[i].get_legend().remove()
-    ax[i].set_xlim(0,78)
+    df_plot = df_skills_perc[df_skills_perc['job_title_short'] == job_title].head(5)[::-1]
+    sns.barplot(data=df_plot, x='skill_percent', y='job_skills', ax=ax[i], hue='skill_count', palette='dark:b_r')
 
-    for n, v in enumerate(df_plot['skill_percent']):
-        ax[i].text(v +1 ,n ,f'{v:.0f}%', va = 'center') 
-    
-    if i != len(job_titles) - 1:
-        ax[i].set_xticks([])    
-
-fig.suptitle('Counts of Top Skills in Job Posting', fontsize = 15)
-fig.tight_layout(h_pad=0.5)
 plt.show()
 ``` 
 
@@ -119,7 +99,7 @@ Python is a versatile skill, highly demanded across all three roles, but most pr
 ## 2. How are in-demand skills trending for Data Analysts?
 To find how skills are trending in 2023 for Data Analysts, I filtered data analyst positions and grouped the skills by the month of the job postings. This got me the top 5 skills of data analysts by month, showing how popular skills were throughout 2023.
 
-View my notebook with detailed steps here: [3_Trend.ipynb](3_Project\3_Trend.ipynb) 
+View my notebook with detailed steps here: [3_Trend.ipynb](3_Trend.ipynb) 
 
 ### Visualize Data
 ```python
@@ -149,7 +129,7 @@ plt.show()
 
 To identify the highest-paying roles and skills, I only got jobs in the United States and looked at their median salary. But first I looked at the salary distributions of common data jobs like Data Scientist, Data Engineer, and Data Analyst, to get an idea of which jobs are paid the most.
 
-View my notebook with detailed steps here:[3_Project\4_Salary_Analysis_USA.ipynb](3_Project\4_Salary_Analysis_USA.ipynb)
+View my notebook with detailed steps here:[4_Salary_Analysis_USA.ipynb](4_Salary_Analysis_USA.ipynb)
 
 ### Visualize Data
 
@@ -217,7 +197,7 @@ Here's the breakdown of the highest-paid & most in-demand skills for data analys
 
 To identify the most optimal skills to learn ( the ones that are the highest paid and highest in demand) I calculated the percent of skill demand and the median salary of these skills. To easily identify which are the most optimal skills to learn.
 
-View my notebook with detailed steps here:[3_Project\6_Optimal_Skills.ipynb](3_Project\6_Optimal_Skills.ipynb)
+View my notebook with detailed steps here:[6_Optimal_Skills.ipynb](6_Optimal_Skills.ipynb)
 
 ### Visualize Data
 
