@@ -87,7 +87,8 @@ plt.show()
 
 ### Results
 
-!['Visualization of Top Skills for Data Nerda'](Skill_Demand.png)
+![Skill Demand](Images/Skill_Demand.png)
+
 *Bar graph visualizing the salary for the top 3 data roles and their top 5 skills associated with each.*
 
 ### Insights
